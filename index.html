@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan Lucu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        main {
+            padding-top: 100px; /* supaya tidak ketiban header */
+        }
+        #container {
+            margin-top: 50px;
+            position: relative;
+            height: 300px;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+        }
+        #tombolPindah {
+            position: absolute;
+            background-color: #ff002f;
+        }
+        #tombolDiam {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Pande Ganteng Ga? </header>
+
+    <main>
+        <div id="container">
+            <button id="tombolPindah">Engga </button>
+            <button id="tombolDiam">Iya pake banget </button>
+        </div>
+    </main>
+
+    <script>
+        const tombolPindah = document.getElementById('tombolPindah');
+        const container = document.getElementById('container');
+        const tombolDiam = document.getElementById('tombolDiam');
+
+        tombolPindah.addEventListener('mouseover', () => {
+            const maxX = container.clientWidth - tombolPindah.offsetWidth;
+            const maxY = container.clientHeight - tombolPindah.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            tombolPindah.style.left = randomX + 'px';
+            tombolPindah.style.top = randomY + 'px';
+        });
+
+        tombolDiam.addEventListener('click', () => {
+            alert('Oke tengkyu');
+        });
+    </script>
+
+</body>
+</html>
+<a href="Hadiah"></a>
